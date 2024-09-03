@@ -1,0 +1,48 @@
+---
+import { Icon } from 'astro-icon/components'
+---
+
+<button id="toggle-theme-button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm
+    font-medium rounded-lg border border-border bg-background
+    text-text shadow-sm hover:bg-background-offset
+    focus:outline-none focus:bg-background-offset">
+    <div id="icon-theme-light">
+        <Icon id='toggle-theme-icon' name={'Sun'} />
+    </div>
+    <div id="icon-theme-dark">
+        <Icon id='toggle-theme-icon' name={'Moon'} />
+    </div>
+</button>
+
+<script>
+    const themes = ['dark', 'light'];
+    const button = document.getElementById('toggle-theme-button');
+    const getCurrentTheme = () => document.documentElement.dataset.theme;
+
+    const getNextTheme = () => {
+        const currentTheme = getCurrentTheme();
+        const indexThemeCurrent = themes.indexOf(currentTheme || 'dark');
+
+        return themes[(indexThemeCurrent + 1) % themes.length];
+    };
+
+    const updateIcon = () => {
+        const currentTheme = getCurrentTheme();
+        document.querySelector(`#icon-theme-${currentTheme}`)?.classList.add("hidden");
+
+        const themeNext = getNextTheme();
+        document.querySelector(`#icon-theme-${themeNext}`)?.classList.remove("hidden");
+    };
+
+    button?.addEventListener('click', () => {
+        const newTheme = getCurrentTheme() === 'dark' ? 'light' : 'dark';
+
+        document.documentElement.dataset.theme = newTheme;
+        localStorage.setItem('theme', newTheme);
+        updateIcon();
+    });
+
+    updateIcon();
+</script>
+
+
