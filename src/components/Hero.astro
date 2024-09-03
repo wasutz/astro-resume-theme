@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets';
+import heroImage from '../assets/paul_smith.png';
+---
+
+<section class="py-5 sm:py-10 lg:py-16 overflow-hidden">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
+            <div class="relative flex justify-center">
+                <Image class="w-full md:max-w-md lg:max-w-full"
+                    src={heroImage}
+                    alt="Astro Resume Theme - Paul Smith" />
+            </div>
+            <div>
+                <p class="text-offset">
+                    Software Engineer
+                </p>
+
+                <h1 class="text-2xl font-bold sm:text-4xl lg:text-5xl mt-2">
+                    Paul Smith
+                </h1>
+
+                <p class="mt-5 text-base sm:text-xl">
+                    Transforming challenges into opportunities with cutting-edge technology. Driven by a love for elegant, robust code.
+                </p>
+
+                <div class="mt-10 sm:flex sm:items-center sm:space-x-8">
+                    <a href="#" title=""
+                        class="inline-flex items-center justify-center px-10 py-4 text-base text-white
+                            font-semibold transition-all duration-200 rounded
+                            bg-primary hover:bg-secondary focus:bg-secondary" role="button">
+                        Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
