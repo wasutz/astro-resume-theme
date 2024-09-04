@@ -14,6 +14,7 @@ export default {
 			backgroundColor: {
 				default: "var(--color-background)",
 				offset: "var(--color-background-offset)",
+				border: "var(--color-border)",
 			},
 			borderColor: {
 				default: "var(--color-border)",
