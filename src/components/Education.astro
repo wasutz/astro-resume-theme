@@ -1,0 +1,20 @@
+---
+import CardListSection from './CardListSection.astro';
+
+const education = [
+  {
+    title: "Bachelor of Science in Computer Science",
+    sub_title: "University of Modern Tech",
+    years: "2015 - 2019",
+    details: "Graduated with honors. Specialized in software development, data structures, and algorithms. Worked on various open-source projects and completed internships in tech companies."
+  },
+  {
+    title: "Master of Science in Software Engineering",
+    sub_title: "Global Tech Institute",
+    years: "2019 - 2021",
+    details: "Focused on advanced algorithms, cloud computing, and full-stack development. Published research papers on scalable microservices architecture."
+  }
+];
+---
+
+<CardListSection title="Education" items={education} />

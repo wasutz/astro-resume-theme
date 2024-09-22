@@ -1,0 +1,24 @@
+---
+import CardListItem from './CardListItem.astro';
+
+const { title, items } = Astro.props;
+---
+
+<section class="py-12 bg-background">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-extrabold text-center mb-12">
+        {title}
+    </h2>
+
+    <ul class="space-y-8">
+      {items.map(item => (
+        <CardListItem
+          title={item.title}
+          sub_title={item.sub_title}
+          years={item.years}
+          details={item.details}
+        />
+      ))}
+    </ul>
+  </div>
+</section>
