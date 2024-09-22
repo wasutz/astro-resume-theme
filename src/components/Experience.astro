@@ -1,0 +1,45 @@
+---
+const experiences = [
+  {
+    years: "2021 - Present",
+    company: "Tech Solutions Inc.",
+    role: "Senior Software Engineer",
+    details: "Led the development of a scalable e-commerce platform that increased sales by 30%. Worked with modern technologies including React, Node.js, and AWS."
+  },
+  {
+    years: "2018 - 2021",
+    company: "Innovate Labs",
+    role: "Software Engineer",
+    details: "Developed and maintained web applications for various clients. Key contributor in migrating legacy systems to cloud infrastructure."
+  },
+  {
+    years: "2015 - 2018",
+    company: "Creative Apps Studio",
+    role: "Junior Developer",
+    details: "Worked on mobile app development, collaborating with design teams to create user-friendly applications."
+  }
+];
+---
+
+<section class="py-12 bg-background">
+  <div class="container mx-auto px-12">
+    <h2 class="text-4xl font-extrabold text-center mb-12">
+        Experience
+    </h2>
+
+    <ul class="space-y-8">
+      {experiences.map(exp => (
+        <li class="p-5 bg-background-offset shadow-lg rounded-xl border border-default">
+          <div class="flex flex-col sm:flex-row justify-between items-start">
+            <div class="mb-4 sm:mb-0">
+              <h3 class="text-2xl font-semibold">{exp.role}</h3>
+              <p class="text-lg font-medium text-primary">{exp.company}</p>
+            </div>
+            <p class="text-sm text-offset">{exp.years}</p>
+          </div>
+          <p class="mt-6 text-offset leading-relaxed">{exp.details}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
