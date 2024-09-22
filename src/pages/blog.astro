@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BlogList from '../components/sections/BlogList.astro';
+import Header from '../components/sections/Header.astro';
+import Footer from '../components/sections/Footer.astro';
+import '../styles/index.css';
+
+const blogs = [
+  {
+    title: "Introduction to Astro",
+    description: "Astro is a new static site builder that brings speed and simplicity back to the web.",
+    datetime: "2024-09-22T00:00:00Z",
+    image: "",
+    url: "/blog/astro-intro"
+  },
+  {
+    title: "Building with Tailwind",
+    description: "Learn how to build modern, responsive websites quickly with Tailwind CSS.",
+    datetime: "2024-08-15T00:00:00Z",
+    image: "",
+    url: "/blog/tailwind-building"
+  },
+  {
+    title: "Get to know Bun",
+    description: "a super fast JavaScript runtime.",
+    datetime: "2024-08-15T00:00:00Z",
+    image: "https://images.unsplash.com/photo-1726476641991-d243eb5e5d8d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "/blog/tailwind-building"
+  }
+];
+---
+
+<Layout title="Blog">
+    <Header />
+	<BlogList blogs={blogs} />
+    <Footer />
+</Layout>

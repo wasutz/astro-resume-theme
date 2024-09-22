@@ -1,6 +1,13 @@
 ---
 import CardListItem from './CardListItem.astro';
 
+interface Item {
+  title: string;
+  sub_title: string;
+  years: string;
+  details?: string;
+}
+
 const { title, items } = Astro.props;
 ---
 
@@ -11,12 +18,12 @@ const { title, items } = Astro.props;
     </h2>
 
     <ul class="space-y-8">
-      {items.map(item => (
+      {items.map((item: Item) => (
         <CardListItem
           title={item.title}
           sub_title={item.sub_title}
           years={item.years}
-          details={item.details}
+          details={item?.details}
         />
       ))}
     </ul>
