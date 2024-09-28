@@ -1,7 +1,11 @@
 export interface Blog {
-    title: string;
-    description: string;
-    datetime: string;
-    image?: string;
-    url: string;
+    id: string;
+    slug: string;
+    body: string;
+    data: {
+        title: string;
+        description: string;
+        datetime: string;
+        image?: string;
+    }
 }

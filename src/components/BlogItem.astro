@@ -1,23 +1,24 @@
 ---
 const { blog } = Astro.props;
+
 ---
 
-<a href={blog.url} class="block">
-    <li class="group flex flex-col lg:flex-row items-start bg-background p-5 rounded-lg shadow-md
+<a href={`/blogs/${blog.slug}`} class="block">
+    <li class="group flex flex-col md:flex-row items-start bg-background p-5 rounded-lg shadow-md
         border border-default hover:shadow-lg transition-shadow">
         <div class="flex-1 pr-3">
             <h3 class="text-2xl font-semibold group-hover:text-primary transition-colors pt-1">
-                {blog.title}
+                {blog.data.title}
             </h3>
             <time datetime={blog.datetime} class="block mt-3 text-sm text-offset">
-              {new Date(blog.datetime).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              {new Date(blog.data.datetime).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
             </time>
-            <p class="text-offset mt-4 line-clamp-2">{blog.description}</p>
+            <p class="text-offset mt-4 line-clamp-2">{blog.data.description}</p>
         </div>
-        {blog.image && (
-            <div class="block w-full lg:w-1/4 overflow-hidden rounded-lg mb-4 lg:mb-0 lg:mr-6">
-            <img src={blog.image} alt={blog.title} class="w-full h-48 lg:h-auto object-cover object-center rounded-lg
-                group-hover:scale-105 transition-transform duration-300" />
+        {blog.data.image && (
+            <div class="block w-full md:w-1/4 rounded-lg mt-4 lg:mt-1">
+                <img src={blog.data.image} alt={blog.data.title} class="w-full lg:h-auto object-cover object-center rounded-lg
+                    md:group-hover:scale-105 transition-transform duration-300" />
             </div>
         )}
     </li>
