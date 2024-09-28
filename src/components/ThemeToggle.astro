@@ -34,15 +34,27 @@ import { Icon } from 'astro-icon/components'
         document.querySelector(`#icon-theme-${themeNext}`)?.classList.remove("hidden");
     };
 
+    const toggleMarkdownTheme = (newTheme: string) => {
+        const contentElement = document.getElementById('markdown');
+        if (!contentElement) {
+            return;
+        }
+
+        if (newTheme === "dark") {
+            contentElement.classList.add('prose-invert');
+        } else {
+            contentElement.classList.remove('prose-invert');
+        }
+    };
+
     button?.addEventListener('click', () => {
         const newTheme = getCurrentTheme() === 'dark' ? 'light' : 'dark';
 
         document.documentElement.dataset.theme = newTheme;
         localStorage.setItem('theme', newTheme);
         updateIcon();
+        toggleMarkdownTheme(newTheme);
     });
 
     updateIcon();
 </script>
-
-
