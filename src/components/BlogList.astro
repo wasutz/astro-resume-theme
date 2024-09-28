@@ -1,0 +1,17 @@
+---
+import type { Blog } from '../types/BlogType';
+import BlogItem from './BlogItem.astro';
+
+const { blogs } = Astro.props;
+---
+
+<section class="py-12 bg-background">
+  <div class="container mx-auto px-4 max-w-4xl">
+    <h1 class="text-center text-3xl mb-10">Recent posts</h1>
+    <ul class="space-y-6">
+      {blogs.map((blog: Blog) => (
+        <BlogItem blog={blog} />
+      ))}
+    </ul>
+  </div>
+</section>
