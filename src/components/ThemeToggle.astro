@@ -15,46 +15,19 @@ import { Icon } from 'astro-icon/components'
 </button>
 
 <script>
-    const themes = ['dark', 'light'];
+    import { toggleMarkdownTheme, updateToggleThemeIcon } from "../scripts/theme";
+
     const button = document.getElementById('toggle-theme-button');
     const getCurrentTheme = () => document.documentElement.dataset.theme;
-
-    const getNextTheme = () => {
-        const currentTheme = getCurrentTheme();
-        const indexThemeCurrent = themes.indexOf(currentTheme || 'dark');
-
-        return themes[(indexThemeCurrent + 1) % themes.length];
-    };
-
-    const updateIcon = () => {
-        const currentTheme = getCurrentTheme();
-        document.querySelector(`#icon-theme-${currentTheme}`)?.classList.add("hidden");
-
-        const themeNext = getNextTheme();
-        document.querySelector(`#icon-theme-${themeNext}`)?.classList.remove("hidden");
-    };
-
-    const toggleMarkdownTheme = (newTheme: string) => {
-        const contentElement = document.getElementById('markdown');
-        if (!contentElement) {
-            return;
-        }
-
-        if (newTheme === "dark") {
-            contentElement.classList.add('prose-invert');
-        } else {
-            contentElement.classList.remove('prose-invert');
-        }
-    };
 
     button?.addEventListener('click', () => {
         const newTheme = getCurrentTheme() === 'dark' ? 'light' : 'dark';
 
         document.documentElement.dataset.theme = newTheme;
         localStorage.setItem('theme', newTheme);
-        updateIcon();
+        updateToggleThemeIcon();
         toggleMarkdownTheme(newTheme);
     });
 
-    updateIcon();
+    updateToggleThemeIcon();
 </script>

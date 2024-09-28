@@ -39,21 +39,11 @@ const {Content} = await blog.render();
     </section>
     <Footer />
 
-    <script is:inline>
-        const applyThemeStyles = () => {
-            const savedTheme = localStorage.getItem("theme");
-            const markdownElement = document.getElementById('markdown');
-            if (!markdownElement) {
-                return;
-            }
+    <script>
+        import { toggleMarkdownTheme } from "../../scripts/theme";
 
-            if (savedTheme === 'dark') {
-                markdownElement.classList.add('prose-invert');
-            } else {
-                markdownElement.classList.remove('prose-invert');
-            }
-        };
+        const theme = localStorage.getItem("theme") || "dark";
 
-        applyThemeStyles();
+        toggleMarkdownTheme(theme)
     </script>
 </Layout>
