@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import type { Page } from "astro";
+import type { CollectionEntry } from "astro:content";
+import Layout from '../../layouts/Layout.astro';
+import BlogList from '../../components/BlogList.astro';
+import Pagination from '../../components/Pagination.astro';
+
+export async function getStaticPaths({ paginate }) {
+    const blogs = await getCollection("blogs");
+
+    return paginate(blogs, {
+        pageSize: 5,
+    });
+}
+
+export interface Props {
+  page: Page<CollectionEntry<"blogs">>;
+}
+
+const { page } = Astro.props;
+---
+
+<Layout title={`Blogs`}>
+	<BlogList blogs={page?.data || []} />
+    <Pagination page={page} />
+</Layout>
