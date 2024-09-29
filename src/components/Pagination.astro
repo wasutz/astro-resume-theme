@@ -12,7 +12,7 @@ const hasNextPage = page.url.next;
 const currentPage = page.currentPage;
 ---
 
-<nav aria-label="Page navigation example" class="flex justify-center items-center space-x-4 mt-8">
+<nav aria-label="Blog pagination" class="flex justify-center items-center space-x-4 mt-8">
   {hasPreviousPage ? (
     <a
       href={`/blogs/${currentPage - 1}`}

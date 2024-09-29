@@ -3,8 +3,6 @@ import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 
 import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/sections/Header.astro';
-import Footer from '../../components/sections/Footer.astro';
 
 export const getStaticPaths = async () => {
     const blogs = await getCollection("blogs");
@@ -31,13 +29,11 @@ const {Content} = await blog.render();
 ---
 
 <Layout title={blog.data.title}>
-    <Header />
     <section class="flex justify-center mt-12">
         <div id="markdown" class="prose prose-lg overflow-visible relative mb-5">
             <Content />
         </div>
     </section>
-    <Footer />
 
     <script>
         import { toggleMarkdownTheme } from "../../scripts/theme";
