@@ -1,0 +1,47 @@
+---
+import Project from '../Project.astro';
+
+const projects = [
+  {
+    imageUrl: 'https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?q=80&w=764&auto=format&fit=crop',
+    title: 'hello.com',
+    type: 'Website',
+    link: 'https://github.com/wasutz/astro-resume-theme'
+  },
+  {
+    imageUrl: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=764&auto=format&fit=crop',
+    title: 'Paul UI kit collections',
+    type: 'UI Kit',
+    link: 'https://github.com/wasutz/astro-resume-theme'
+  },
+  {
+    imageUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=764&auto=format&fit=crop',
+    title: 'paul.com',
+    type: 'Website',
+    link: 'https://github.com/wasutz/astro-resume-theme'
+  }
+];
+---
+
+<section class="bg-background">
+    <div class="container px-6 py-8 mx-auto">
+        <h1 class="text-3xl font-semibold text-center capitalize lg:text-4xl">
+            Our Portfolio
+        </h1>
+
+        <p class="mt-4 text-center text-offset">
+            Discover our range of projects that highlight our expertise in design, development, and innovative solutions.
+        </p>
+
+        <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
+            {projects.map(project => (
+                <Project
+                    imageUrl={project.imageUrl}
+                    title={project.title}
+                    type={project.type}
+                    link={project.link}
+                />
+            ))}
+        </div>
+    </div>
+</section>
