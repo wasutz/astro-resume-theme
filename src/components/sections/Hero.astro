@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import heroImage from '../../assets/paul_smith.png';
+import { basic } from '../../config/cv.json';
 ---
 
 <section class="py-5 px-4 sm:py-10 lg:py-16">
@@ -13,19 +14,19 @@ import heroImage from '../../assets/paul_smith.png';
             </div>
             <div>
                 <p class="text-lg text-offset">
-                    Software Engineer
+                    {basic?.job}
                 </p>
 
                 <h1 class="text-2xl font-bold sm:text-4xl lg:text-5xl mt-3">
-                    Paul Smith
+                    {basic?.name}
                 </h1>
 
                 <p class="mt-5 text-base sm:text-xl">
-                    Transforming challenges into opportunities with cutting-edge technology. Driven by a love for elegant, robust code.
+                    {basic?.summary}
                 </p>
 
                 <div class="mt-10 sm:flex sm:items-center sm:space-x-8">
-                    <a href="/cv/paul_cv.pdf" title="Download CV" download
+                    <a href=`/cv/${basic?.cv_file_name}` title="Download CV" download
                         class="inline-flex items-center justify-center px-10 py-4 text-base text-white
                             font-semibold transition-all duration-200 rounded
                             bg-primary hover:bg-secondary focus:bg-secondary" role="button">

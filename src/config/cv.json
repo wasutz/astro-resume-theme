@@ -1,0 +1,62 @@
+{
+    "basic": {
+        "name": "Paul Smith",
+        "job": "Software Engineer",
+        "summary": "Transforming challenges into opportunities with cutting-edge technology. Driven by a love for elegant, robust code.",
+        "cv_file_name": "paul_cv.pdf"
+    },
+    "experiences": [
+        {
+            "title": "Senior Software Engineer",
+            "sub_title": "Tech Solutions Inc.",
+            "years": "2021 - Present",
+            "details": "Led the development of a scalable e-commerce platform that increased sales by 30%. Worked with modern technologies including React, Node.js, and AWS."
+        },
+        {
+            "title": "Software Engineer",
+            "sub_title": "Innovate Labs",
+            "years": "2018 - 2021",
+            "details": "Developed and maintained web applications for various clients. Key contributor in migrating legacy systems to cloud infrastructure."
+        },
+        {
+            "title": "Junior Developer",
+            "sub_title": "Creative Apps Studio",
+            "years": "2015 - 2018",
+            "details": "Worked on mobile app development, collaborating with design teams to create user-friendly applications."
+        }
+    ],
+    "education": [
+        {
+            "title": "Bachelor of Science in Computer Science",
+            "sub_title": "University of Modern Tech",
+            "years": "2015 - 2019",
+            "details": "Graduated with honors. Specialized in software development, data structures, and algorithms. Worked on various open-source projects and completed internships in tech companies."
+        },
+        {
+            "title": "Master of Science in Software Engineering",
+            "sub_title": "Global Tech Institute",
+            "years": "2019 - 2021",
+            "details": "Focused on advanced algorithms, cloud computing, and full-stack development. Published research papers on scalable microservices architecture."
+        }
+    ],
+    "projects": [
+        {
+            "imageUrl": "https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?q=80&w=764&auto=format&fit=crop",
+            "title": "hello.com",
+            "type": "Website",
+            "link": "https://github.com/wasutz/astro-resume-theme"
+        },
+        {
+            "imageUrl": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=764&auto=format&fit=crop",
+            "title": "Paul UI kit collections",
+            "type": "UI Kit",
+            "link": "https://github.com/wasutz/astro-resume-theme"
+        },
+        {
+            "imageUrl": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=764&auto=format&fit=crop",
+            "title": "paul.com",
+            "type": "Website",
+            "link": "https://github.com/wasutz/astro-resume-theme"
+        }
+    ]
+}

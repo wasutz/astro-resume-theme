@@ -1,26 +1,6 @@
 ---
 import CardListSection from "../../CardListSection.astro";
-
-const experiences = [
-  {
-    title: "Senior Software Engineer",
-    sub_title: "Tech Solutions Inc.",
-    years: "2021 - Present",
-    details: "Led the development of a scalable e-commerce platform that increased sales by 30%. Worked with modern technologies including React, Node.js, and AWS."
-  },
-  {
-    title: "Software Engineer",
-    sub_title: "Innovate Labs",
-    years: "2018 - 2021",
-    details: "Developed and maintained web applications for various clients. Key contributor in migrating legacy systems to cloud infrastructure."
-  },
-  {
-    title: "Junior Developer",
-    sub_title: "Creative Apps Studio",
-    years: "2015 - 2018",
-    details: "Worked on mobile app development, collaborating with design teams to create user-friendly applications."
-  }
-];
+import { experiences } from '../../../config/cv.json';
 ---
 
 <CardListSection title="Experience" items={experiences} />
