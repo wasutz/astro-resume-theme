@@ -1,26 +1,6 @@
 ---
 import Project from '../Project.astro';
-
-const projects = [
-  {
-    imageUrl: 'https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?q=80&w=764&auto=format&fit=crop',
-    title: 'hello.com',
-    type: 'Website',
-    link: 'https://github.com/wasutz/astro-resume-theme'
-  },
-  {
-    imageUrl: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=764&auto=format&fit=crop',
-    title: 'Paul UI kit collections',
-    type: 'UI Kit',
-    link: 'https://github.com/wasutz/astro-resume-theme'
-  },
-  {
-    imageUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=764&auto=format&fit=crop',
-    title: 'paul.com',
-    type: 'Website',
-    link: 'https://github.com/wasutz/astro-resume-theme'
-  }
-];
+import { projects } from '../../config/cv.json';
 ---
 
 <section class="bg-background">

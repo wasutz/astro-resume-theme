@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import ThemeToggle from "../ThemeToggle.astro";
+import { basic } from "../../config/cv.json";
 
 const menuItems = [
   { name: 'About', href: '/' },
@@ -12,7 +13,7 @@ const menuItems = [
   <div class="container max-w-6xl mx-auto flex justify-between items-center px-4 md:px-8">
     <!-- Logo -->
     <div class="text-2xl font-bold">
-      <a href="/" class="hover:text-offset">Paul Smith</a>
+      <a href="/" class="hover:text-offset">{basic?.name}</a>
     </div>
 
     <div class="flex gap-5">
