@@ -27,6 +27,8 @@ yarn create astro --template wasutz/astro-resume-theme
 - Theme Customization: Easily adjustable in src/styles/theme.css.
 - Responsive Design: Optimized for mobile, tablet, and desktop devices.
 - MDX Support: Allows blog posts written in Markdown with JSX components.
+- Excellent Lighthouse/PageSpeed scores
+- SEO-friendly
 
 ## 🧞 Commands
 
