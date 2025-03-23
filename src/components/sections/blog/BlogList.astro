@@ -1,5 +1,5 @@
 ---
-import type { Blog } from '../../types/BlogType';
+import type { Blog } from '../../../types/BlogType';
 import BlogItem from './BlogItem.astro';
 
 const { blogs } = Astro.props;
@@ -10,7 +10,7 @@ const { blogs } = Astro.props;
     <h1 class="text-center text-3xl mb-10">Recent posts</h1>
     <div class="space-y-6">
       {blogs.map((blog: Blog, index) => (
-        <BlogItem blog={blog}  isFirst={index === 0} />
+        <BlogItem blog={blog} isFirst={index === 0} />
       ))}
     </div>
   </div>
