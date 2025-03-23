@@ -3,8 +3,8 @@ import { getCollection } from 'astro:content';
 import type { Page } from "astro";
 import type { CollectionEntry } from "astro:content";
 import Layout from '../../layouts/Layout.astro';
-import BlogList from '../../components/BlogList.astro';
-import Pagination from '../../components/Pagination.astro';
+import BlogList from '../../components/sections/blog/BlogList.astro';
+import Pagination from '../../components/common/Pagination.astro';
 
 export async function getStaticPaths({ paginate }) {
     const blogs = await getCollection("blogs");
