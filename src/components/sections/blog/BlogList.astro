@@ -9,7 +9,7 @@ const { blogs } = Astro.props;
   <div class="container mx-auto px-4 max-w-4xl">
     <h1 class="text-center text-3xl mb-10">Recent posts</h1>
     <div class="space-y-6">
-      {blogs.map((blog: Blog, index) => (
+      {blogs.map((blog: Blog, index: number) => (
         <BlogItem blog={blog} isFirst={index === 0} />
       ))}
     </div>
