@@ -1,12 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
-import ThemeToggle from "../ThemeToggle.astro";
-import { basic } from "../../config/cv.json";
-
-const menuItems = [
-  { name: 'About', href: '/' },
-  { name: 'Blog', href: '/blogs' }
-];
+import ThemeToggle from "../common/ThemeToggle.astro";
+import { basic, menuItems } from "../../config/cv.json";
 ---
 
 <header class="bg-background py-4">
@@ -20,7 +15,7 @@ const menuItems = [
       <!-- PC Menu -->
       <nav class="hidden sm:flex space-x-6 items-center">
         {menuItems.map((item) => (
-          <a href={item.href} class="hover:text-offset">{item.name}</a>
+          <a href={item.link} class="hover:text-offset">{item.name}</a>
         ))}
       </nav>
 
@@ -38,7 +33,7 @@ const menuItems = [
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden sm:hidden">
     {menuItems.map((item) => (
-      <a href={item.href} class="block px-4 py-2 hover:bg-background-offset">
+      <a href={item.link} class="block px-4 py-2 hover:bg-background-offset">
         {item.name}
       </a>
     ))}

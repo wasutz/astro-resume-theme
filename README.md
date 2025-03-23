@@ -66,3 +66,9 @@ bun run dev
 ```
 
 Open http://localhost:4321 in your browser to view the result 🚀
+
+## License
+
+Licensed under the MIT License, Copyright © Wasut Panyawiphat.
+
+See [LICENSE](/LICENSE) for more information.
