@@ -1,0 +1,41 @@
+---
+import Paragraph from "./Paragraph.astro";
+---
+
+<div class="modal-content-wrapper">
+  <h2>E2E Automation - NextTask App with Playwright</h2>
+  <Paragraph
+    content={"This project focuses on automating end-to-end tests for the ##NextTask## web application using ##Playwright## with ##TypeScript##. The tests simulate real user interactions to validate the full behavior of features like task creation, editing, completion, and deletion."}
+  />
+  <img src="/projects/playwright-overview.png" alt="Playwright Test Overview Screenshot" />
+  <Paragraph
+    content={"The test suite is written using Playwright’s built-in test runner and uses test hooks, page objects, and custom helpers to keep everything modular and easy to maintain."}
+  />
+  <img src="/projects/playwright-test-code.png" alt="Sample Playwright Test Code" />
+  <Paragraph
+    content={"All tests run automatically via ##GitHub Actions## on each push to the main branch. The workflow is configured to execute tests in headless mode using Chromium, and the test results are uploaded as ##artifacts## for review."}
+  />
+  <img
+    src="/projects/github-actions-playwright.png"
+    alt="GitHub Actions Running Playwright Tests"
+  />
+  <Paragraph
+    content={"This setup ensures every commit gets instant feedback about the UI’s health. It’s fast, scalable, and helps catch regressions early in the development cycle."}
+  />
+  <div class="modal-buttons">
+    <a
+      href="https://github.com/MonicaPerdomoSantana/nexttask-playwright-e2e"
+      target="_blank"
+      role="button"
+      class="bg-primary text-white">
+      GitHub repository
+    </a>
+    <a
+      href="https://monicaperdomosantana.github.io/nexttask-playwright-e2e/"
+      target="_blank"
+      role="button"
+      class="bg-green-600 text-white">
+      Latest report
+    </a>
+  </div>
+</div>

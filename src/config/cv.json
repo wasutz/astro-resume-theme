@@ -1,9 +1,25 @@
 {
+<<<<<<< Updated upstream
     "basic": {
         "name": "Paul Smith",
         "job": "Software Engineer",
         "summary": "Transforming challenges into opportunities with cutting-edge technology. Driven by a love for elegant, robust code.",
         "cv_file_name": "paul_cv.pdf"
+=======
+  "basic": {
+    "name": "Mónica Perdomo Santana",
+    "job": "QA Tester",
+    "summary": "I'm a self-taught QA enthusiast building hands-on experience through my personal project, Solara Codeworks. I'm actively practicing test case design, bug reporting, and test management using tools like Jira, Postman, Playwright, and GitHub.",
+    "cv_file_name": "MonicaPerdomo_QATester.pdf",
+    "linkedin": "https://www.linkedin.com/in/m%C3%B3nica-perdomo-santana-0449b0366/"
+  },
+  "experiences": [
+    {
+      "title": "Software QA Tester (Collaborative Training Project)",
+      "sub_title": "Solara Codeworks - Seville, Spain",
+      "years": "Apr 2025 – Present",
+      "details": "Designed and executed manual test cases. Logged and tracked bugs using Jira. Performed REST API testing with Postman. Gained experience with basic JavaScript and real-world QA practices within the software development life cycle."
+>>>>>>> Stashed changes
     },
     "experiences": [
         {

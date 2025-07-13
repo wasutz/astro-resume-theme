@@ -1,0 +1,162 @@
+---
+import NextTaskPlaywrightProject from "./projects/NextTaskPlaywrightProject.astro";
+import NextTaskProject from "./projects/NextTaskProject.astro";
+import PostgreSQLProject from "./projects/PostgreSQLProject.astro";
+import ProjectModalLayout from "./projects/ProjectModalLayout.astro";
+import TrelloProject from "./projects/TrelloProject.astro";
+
+const TAGS = {
+  jira: {
+    name: "Jira",
+    class: "bg-blue-700 text-white",
+  },
+  xray: {
+    name: "Xray",
+    class: "bg-green-600 text-white",
+  },
+  postman: {
+    name: "Postman",
+    class: "bg-orange-500 text-white",
+  },
+  newman: {
+    name: "Newman",
+    class: "bg-orange-400 text-white",
+  },
+  jenkins: {
+    name: "Jenkins",
+    class: "bg-red-600 text-white",
+  },
+  githubActions: {
+    name: "GitHub Actions",
+    class: "bg-purple-700 text-white",
+  },
+  agileScrum: {
+    name: "Agile / Scrum",
+    class: "bg-indigo-600 text-white",
+  },
+  postgres: {
+    name: "Postgre SQL",
+    class: "bg-emerald-700 text-white",
+  },
+  sql: {
+    name: "SQL",
+    class: "bg-slate-600 text-white",
+  },
+  playwright: {
+    name: "Playwright",
+    class: "bg-pink-600 text-white",
+  },
+  typescript: {
+    name: "TypeScript",
+    class: "bg-blue-500 text-white",
+  },
+  javascript: {
+    name: "JavaScript",
+    class: "bg-yellow-400 text-black",
+  },
+};
+
+const PROJECTS = [
+  {
+    id: "nexttask-e2e",
+    title: "E2E Automation - NextTask App with Playwright",
+    description:
+      "End-to-end test automation of the NextTask App using Playwright and TypeScript. Executed on GitHub Actions with clear reporting and fast feedback cycle.",
+    link: "#",
+    image: "/projects/playwright-nexttask.png",
+    tags: [TAGS.playwright, TAGS.javascript, TAGS.typescript, TAGS.githubActions],
+  },
+  {
+    id: "trello",
+    title: "Full API Testing Automation of Trello API",
+    description:
+      "Complete test automation for the public Trello API using Postman and Newman. Integrated with Jenkins for CI/CD to ensure reliable tests and fast feedback.",
+    link: "#",
+    image: "/projects/postman-collections.png",
+    tags: [TAGS.postman, TAGS.newman, TAGS.jenkins, TAGS.githubActions],
+  },
+  {
+    id: "sql-postgres",
+    title: "PostgreSQL Reports Automation - Chinook DB",
+    description:
+      "Automated the execution of SQL scripts on the Chinook music store database using GitHub Actions. Generated CSV reports and published them to GitHub Pages.",
+    link: "#",
+    image: "/projects/sql-postgres.png",
+    tags: [TAGS.postgres, TAGS.githubActions, TAGS.sql],
+  },
+  {
+    id: "nexttask",
+    title: "Test Plan & Bug Reporting - NextTask App",
+    description:
+      "Created a comprehensive test plan for NextTask using Xray and Jira, with full documentation in Confluence. Focused on core CRUD validation and traceability.",
+    link: "#",
+    image: "/projects/jira.png",
+    tags: [TAGS.jira, TAGS.xray, TAGS.agileScrum],
+  },
+];
+---
+
+<section id="portfolio" class="mx-auto w-full max-w-7xl py-36">
+  <h1 class="mx-8 text-center text-3xl font-semibold capitalize lg:text-5xl">
+    Experience & Projects
+  </h1>
+  <div class="mx-8 mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 xl:mt-12">
+    {
+      PROJECTS.map(({ id, image, title, description, tags }) => (
+        <article
+          id={`article-${id}`}
+          data-dialog-open={id}
+          class="flex h-full flex-col bg-offset transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-primary hover:bg-start hover:shadow-lg">
+          <>
+            <a
+              id={id + "-open"}
+              class="flex h-full cursor-pointer flex-col items-center rounded-lg border border-default shadow-sm hover:border-primary">
+              <div class="aspect-[16/9] w-full overflow-hidden rounded-t-lg">
+                <img
+                  class="h-full w-full object-cover transition-transform duration-500 ease-in-out hover:scale-110"
+                  src={image}
+                  alt=""
+                />
+              </div>
+              <div class="flex flex-grow flex-col justify-between p-5 leading-normal">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight">{title}</h5>
+                {description.split("\n").map((line) => (
+                  <p class="mb-3 text-xl font-normal">{line}</p>
+                ))}
+
+                <span class="mb-4 select-none self-start font-semibold italic text-primary">
+                  Click to see details →
+                </span>
+
+                <div class="mt-2 flex flex-wrap">
+                  <ul class="mb-2 flex flex-row flex-wrap gap-x-4 gap-y-2">
+                    {tags.map((tag) => (
+                      <li>
+                        <span
+                          class={`relative flex transform items-center justify-center rounded-full px-4 py-2 text-sm font-bold uppercase tracking-wide transition-all duration-300 ${tag.class} shadow-[inset_0_1px_1px_rgba(255,255,255,0.4),inset_0_-1px_1px_rgba(0,0,0,0.2)] ring-1 ring-white/10 hover:scale-110 hover:shadow-[0_2px_10px_rgba(255,255,255,0.3),inset_0_1px_1px_rgba(255,255,255,0.5)]`}>
+                          {tag.name}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </a>
+          </>
+        </article>
+      ))
+    }
+  </div>
+  <ProjectModalLayout id="nexttask-e2e">
+    <NextTaskPlaywrightProject />
+  </ProjectModalLayout>
+  <ProjectModalLayout id="trello">
+    <TrelloProject />
+  </ProjectModalLayout>
+  <ProjectModalLayout id="sql-postgres">
+    <PostgreSQLProject />
+  </ProjectModalLayout>
+  <ProjectModalLayout id="nexttask">
+    <NextTaskProject />
+  </ProjectModalLayout>
+</section>

@@ -1,0 +1,38 @@
+---
+import Paragraph from "./Paragraph.astro";
+---
+
+<div class="modal-content-wrapper">
+  <h2>PostgreSQL Reports Automation - Chinook DB</h2>
+  <Paragraph
+    content={"I worked with the classic ##Chinook## music store database, hosted on ##Supabase## using ##PostgreSQL 17##. The goal was to generate useful reports from SQL queries and automate their delivery."}
+  />
+  <img src="/projects/chinook-er.png" alt="Chinook ER Diagram" />
+  <Paragraph
+    content={"All SQL scripts were stored in a dedicated folder and executed automatically using ##GitHub Actions##. The workflow connects to the remote database securely through the ##connection pooler## and runs the queries as part of a CI pipeline."}
+  />
+  <img src="/projects/sql-workflow.png" alt="GitHub Actions Workflow for SQL" />
+  <Paragraph
+    content={"Each script output is saved as a ##CSV## file and published to ##GitHub Pages##, making the reports publicly accessible. This setup allows for easy inspection of data like album sales, top customers, and invoice histories."}
+  />
+  <img src="/projects/csv-report.png" alt="CSV Output Example" />
+  <Paragraph
+    content={"This project highlights skills in writing raw SQL queries, managing automation pipelines, and exposing structured data as part of a QA reporting process. It also shows how to deal with production-like environments (like Supabase) in testing workflows."}
+  />
+  <div class="modal-buttons">
+    <a
+      href="https://github.com/MonicaPerdomoSantana/chinook-postgre-sql-report"
+      target="_blank"
+      role="button"
+      class="bg-primary text-white">
+      GitHub repository
+    </a>
+    <a
+      href="https://monicaperdomosantana.github.io/chinook-postgre-sql-report/"
+      target="_blank"
+      role="button"
+      class="bg-green-600 text-white">
+      Latest reports
+    </a>
+  </div>
+</div>
