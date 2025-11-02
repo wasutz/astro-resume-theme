@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "astro-resume-theme",
+  "name": "mhd-portfolio-theme",
       "dependencies": {
         "@astrojs/check": "0.9.4",
         "@astrojs/mdx": "4.1.0",
